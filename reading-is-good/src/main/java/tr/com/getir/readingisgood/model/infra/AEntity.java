@@ -3,10 +3,12 @@ package tr.com.getir.readingisgood.model.infra;
 
 
 import jakarta.persistence.*;
+import lombok.Getter;
 
 import java.util.Date;
 
 @MappedSuperclass
+@Getter
 public class AEntity {
     @Id
     @GeneratedValue(strategy= GenerationType.AUTO)

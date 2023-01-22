@@ -1,4 +1,4 @@
-package tr.com.getir.readingisgood.dto;
+package tr.com.getir.readingisgood.model.dto;
 
 import lombok.Getter;
 import lombok.NoArgsConstructor;
@@ -10,9 +10,9 @@ import javax.validation.constraints.NotBlank;
 @Getter
 @Setter
 @NoArgsConstructor
-public class CustomerLoginDTO {
-    @NotBlank(message = FieldErrorConstants.CUSTOMER_USERNAME_CANT_BE_NULL)
+public class UserLoginDTO {
+    @NotBlank(message = FieldErrorConstants.USER_USERNAME_CANT_BE_NULL)
     private String username;
-    @NotBlank(message = FieldErrorConstants.CUSTOMER_PASSWORD_CANT_BE_NULL)
+    @NotBlank(message = FieldErrorConstants.USER_PASSWORD_CANT_BE_NULL)
     private String password;
 }
