@@ -7,8 +7,8 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
-import tr.com.getir.readingisgood.dto.CustomerLoginDTO;
-import tr.com.getir.readingisgood.dto.CustomerRegistrationDTO;
+import tr.com.getir.readingisgood.model.dto.UserLoginDTO;
+import tr.com.getir.readingisgood.model.dto.UserRegistrationDTO;
 import tr.com.getir.readingisgood.service.IAuthService;
 
 @RestController
@@ -23,7 +23,7 @@ public class AuthController {
             consumes = MediaType.APPLICATION_JSON_VALUE,
             produces = MediaType.APPLICATION_JSON_VALUE
     )
-    public ResponseEntity<?> register(@RequestBody CustomerRegistrationDTO registrationDTO) {
+    public ResponseEntity<?> register(@RequestBody UserRegistrationDTO registrationDTO) {
         return ResponseEntity.ok(service.register(registrationDTO));
     }
 
@@ -32,7 +32,7 @@ public class AuthController {
             consumes = MediaType.APPLICATION_JSON_VALUE,
             produces = MediaType.APPLICATION_JSON_VALUE
     )
-    public ResponseEntity<?> login(@RequestBody CustomerLoginDTO loginDTO) {
+    public ResponseEntity<?> login(@RequestBody UserLoginDTO loginDTO) {
         return ResponseEntity.ok(service.login(loginDTO));
     }
 

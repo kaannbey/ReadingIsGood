@@ -14,21 +14,25 @@ public final class FieldErrorConstants {
      */
     public static final String BOOK_STOCK_CANT_BE_LESS_THAN_ZERO = "BOOK_STOCK_CANT_BE_LESS_THAN_ZERO";
     /**
-     * Customer entity customer name field validation constraint
+     * User entity user name field validation constraint
      */
-    public static final String CUSTOMER_NAME_CANT_BE_NULL = "CUSTOMER_NAME_CANT_BE_NULL";
+    public static final String USER_NAME_CANT_BE_NULL = "USER_NAME_CANT_BE_NULL";
     /**
-     * Customer entity customer surname field validation constraint
+     * User entity user surname field validation constraint
      */
-    public static final String CUSTOMER_SURNAME_CANT_BE_NULL = "CUSTOMER_SURNAME_CANT_BE_NULL";
+    public static final String USER_SURNAME_CANT_BE_NULL = "USER_SURNAME_CANT_BE_NULL";
     /**
-     * Customer entity customer username field validation constraint
+     * User entity user username field validation constraint
      */
-    public static final String CUSTOMER_USERNAME_CANT_BE_NULL = "CUSTOMER_USERNAME_CANT_BE_NULL";
+    public static final String USER_USERNAME_CANT_BE_NULL = "USER_USERNAME_CANT_BE_NULL";
     /**
-     * Customer entity customer password field validation constraint
+     * User entity user password field validation constraint
      */
-    public static final String CUSTOMER_PASSWORD_CANT_BE_NULL = "CUSTOMER_PASSWORD_CANT_BE_NULL";
+    public static final String USER_PASSWORD_CANT_BE_NULL = "USER_PASSWORD_CANT_BE_NULL";
+    /**
+     * User entity user email field validation constraint
+     */
+    public static final String USER_EMAIL_CANT_BE_NULL = "USER_EMAIL_CANT_BE_NULL";
 
 
 }
