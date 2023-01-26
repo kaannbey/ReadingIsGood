@@ -1,0 +1,546 @@
+{
+	"info": {
+		"_postman_id": "93cf1ae7-a1b6-4a6b-8507-af077f0c5e59",
+		"name": "ReadingIsGood",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Auth",
+			"item": [
+				{
+					"name": "Register",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "default"
+							},
+							{
+								"key": "admin-header",
+								"value": "reading-is-goo",
+								"type": "default"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\":\"kaan\",\"password\":\"kaan\",\"username\":\"kaan\",\"surname\":\"kaan\",\"email\":\"kaan@gmail.com\"\r\n}"
+						},
+						"url": {
+							"raw": "localhost:8080/auth/register",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"auth",
+								"register"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Login",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "default"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"username\":\"root\",\r\n    \"password\":\"root\"\r\n}"
+						},
+						"url": {
+							"raw": "localhost:8080/auth/login",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"auth",
+								"login"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Order",
+			"item": [
+				{
+					"name": "Order",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJyb290IiwiaWF0IjoxNjc0NzIwNjQ3LCJleHAiOjE2NzQ4MDcwNDd9.E7DTb4hvZrhm_rUd2kPGgTGAk03d2XpbZelT-Y6zVCHUS3qqiPd0503RoaO2fUb14536HQfYvXbUTPrc1Lbj6A",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"bookId\": 1,\r\n  \"amount\": 10\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:8080/order",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"order"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "ApproveOrder",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJyb290IiwiaWF0IjoxNjc0NzIwNjQ3LCJleHAiOjE2NzQ4MDcwNDd9.E7DTb4hvZrhm_rUd2kPGgTGAk03d2XpbZelT-Y6zVCHUS3qqiPd0503RoaO2fUb14536HQfYvXbUTPrc1Lbj6A",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:8080/order/approve",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"order",
+								"approve"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "RetrieveOrderById",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJyb290IiwiaWF0IjoxNjc0NzIwNjQ3LCJleHAiOjE2NzQ4MDcwNDd9.E7DTb4hvZrhm_rUd2kPGgTGAk03d2XpbZelT-Y6zVCHUS3qqiPd0503RoaO2fUb14536HQfYvXbUTPrc1Lbj6A",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:8080/order/1",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"order",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "RetrieveOrders",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJyb290IiwiaWF0IjoxNjc0NzIwNjQ3LCJleHAiOjE2NzQ4MDcwNDd9.E7DTb4hvZrhm_rUd2kPGgTGAk03d2XpbZelT-Y6zVCHUS3qqiPd0503RoaO2fUb14536HQfYvXbUTPrc1Lbj6A",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:8080/order/all?limit=20&offset=0&startDate=2020-01-26T08:16:44.785Z&endDate=2026-01-26T08:16:44.785Z",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"order",
+								"all"
+							],
+							"query": [
+								{
+									"key": "limit",
+									"value": "20"
+								},
+								{
+									"key": "offset",
+									"value": "0"
+								},
+								{
+									"key": "startDate",
+									"value": "2020-01-26T08:16:44.785Z"
+								},
+								{
+									"key": "endDate",
+									"value": "2026-01-26T08:16:44.785Z"
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Admin",
+			"item": [
+				{
+					"name": "UpdateBook",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJyb290IiwiaWF0IjoxNjc0NzIwNjQ3LCJleHAiOjE2NzQ4MDcwNDd9.E7DTb4hvZrhm_rUd2kPGgTGAk03d2XpbZelT-Y6zVCHUS3qqiPd0503RoaO2fUb14536HQfYvXbUTPrc1Lbj6A",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "50",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:8080/admin/book/stock/1",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"admin",
+								"book",
+								"stock",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Register",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "admin-header",
+								"value": "reading-is-good",
+								"type": "default"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"name\": \"root\",\r\n  \"surname\": \"root\",\r\n  \"username\": \"root\",\r\n  \"password\": \"root\",\r\n  \"email\": \"root\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:8080/admin/register",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"admin",
+								"register"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "AddBook",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJyb290IiwiaWF0IjoxNjc0NzIwNjQ3LCJleHAiOjE2NzQ4MDcwNDd9.E7DTb4hvZrhm_rUd2kPGgTGAk03d2XpbZelT-Y6zVCHUS3qqiPd0503RoaO2fUb14536HQfYvXbUTPrc1Lbj6A",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"stock\": 25,\r\n  \"bookName\": \"Harry Potter\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:8080/admin/book",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"admin",
+								"book"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "RetrieveOrders",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJyb290IiwiaWF0IjoxNjc0NzIwNjQ3LCJleHAiOjE2NzQ4MDcwNDd9.E7DTb4hvZrhm_rUd2kPGgTGAk03d2XpbZelT-Y6zVCHUS3qqiPd0503RoaO2fUb14536HQfYvXbUTPrc1Lbj6A",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:8080/admin/order/all?limit=20&offset=0&startDate=2020-01-26T08:16:44.785Z&endDate=2026-01-26T08:16:44.785Z",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"admin",
+								"order",
+								"all"
+							],
+							"query": [
+								{
+									"key": "limit",
+									"value": "20"
+								},
+								{
+									"key": "offset",
+									"value": "0"
+								},
+								{
+									"key": "startDate",
+									"value": "2020-01-26T08:16:44.785Z"
+								},
+								{
+									"key": "endDate",
+									"value": "2026-01-26T08:16:44.785Z"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "RetrieveOrderById",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJyb290IiwiaWF0IjoxNjc0NzIwNjQ3LCJleHAiOjE2NzQ4MDcwNDd9.E7DTb4hvZrhm_rUd2kPGgTGAk03d2XpbZelT-Y6zVCHUS3qqiPd0503RoaO2fUb14536HQfYvXbUTPrc1Lbj6A",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:8080/admin/order/1",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"admin",
+								"order",
+								"1"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Book",
+			"item": [
+				{
+					"name": "RetrieveBookById",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJyb290IiwiaWF0IjoxNjc0NzIwNjQ3LCJleHAiOjE2NzQ4MDcwNDd9.E7DTb4hvZrhm_rUd2kPGgTGAk03d2XpbZelT-Y6zVCHUS3qqiPd0503RoaO2fUb14536HQfYvXbUTPrc1Lbj6A",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:8080/book/1",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"book",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "RetrieveAllBooks",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJyb290IiwiaWF0IjoxNjc0NzIwNjQ3LCJleHAiOjE2NzQ4MDcwNDd9.E7DTb4hvZrhm_rUd2kPGgTGAk03d2XpbZelT-Y6zVCHUS3qqiPd0503RoaO2fUb14536HQfYvXbUTPrc1Lbj6A",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:8080/book/all?limit=10&offset=0",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"book",
+								"all"
+							],
+							"query": [
+								{
+									"key": "limit",
+									"value": "10"
+								},
+								{
+									"key": "offset",
+									"value": "0"
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Statistics",
+			"item": [
+				{
+					"name": "RetrieveUserStatistics",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJyb290IiwiaWF0IjoxNjc0NzIwNjQ3LCJleHAiOjE2NzQ4MDcwNDd9.E7DTb4hvZrhm_rUd2kPGgTGAk03d2XpbZelT-Y6zVCHUS3qqiPd0503RoaO2fUb14536HQfYvXbUTPrc1Lbj6A",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:8080/statistics",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"statistics"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}

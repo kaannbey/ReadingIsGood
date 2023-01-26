@@ -1,11 +1,11 @@
 package tr.com.getir.readingisgood.model.dto;
 
+import jakarta.validation.constraints.NotBlank;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 import tr.com.getir.readingisgood.constant.FieldErrorConstants;
 
-import javax.validation.constraints.NotBlank;
 
 @Getter
 @Setter
